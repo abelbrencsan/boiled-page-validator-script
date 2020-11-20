@@ -1,5 +1,5 @@
 /**
- * Validator - v1.0.0
+ * Validator - v1.0.1
  * Copyright 2020 Abel Brencsan
  * Released under the MIT License
  */
@@ -324,7 +324,7 @@ Validator.prototype = function () {
 								else {
 									this.isSubmitted = true;
 									this.form.classList.add(this.submitClass);
-									if (this.submitCallback) this.submitCallback.call(this);
+									if (this.submitCallback) this.submitCallback.call(this, event);
 								}
 							}
 						}
