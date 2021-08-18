@@ -186,18 +186,6 @@ Parameter | Type | Required | Description
 
 `destroy()` - Destroy validator. It removes all related classes, attributes and events.
 
-### Check validator is initialized
-
-`getIsInitialized()` - Check validator is initialized or not.
-
-### Check all fields are valid
-
-`getIsAllValid()` - Check all fields are valid or not.
-
-### Get all fields
-
-`getFields()` - Get all fields.
-
 ## Examples
 
 ### Example 1

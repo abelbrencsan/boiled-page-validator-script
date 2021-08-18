@@ -1,6 +1,6 @@
 /**
- * Validator - v1.0.1
- * Copyright 2020 Abel Brencsan
+ * Validator - v1.1.0
+ * Copyright 2021 Abel Brencsan
  * Released under the MIT License
  */
 
@@ -387,27 +387,6 @@ Validator.prototype = function () {
 		},
 
 		/**
-		 * Get value of "isInitialized" to be able to check validator is initialized. (public)
-		 */
-		getIsInitialized: function() {
-			return this.isInitialized;
-		},
-
-		/**
-		 * Get value of "isAllValid" to be able to check all fields are valid. (public)
-		 */
-		getIsAllValid: function() {
-			return this.isAllValid;
-		},
-
-		/**
-		 * Get value of "fields". (public)
-		 */
-		getFields: function() {
-			return this.fields;
-		},
-
-		/**
 		 * Validation tests (private)
 		 */
 		tests: [
@@ -567,10 +546,7 @@ Validator.prototype = function () {
 		devalidateByGroup: validator.devalidateByGroup,
 		validateByInputId: validator.validateByInputId,
 		devalidateByInputId: validator.devalidateByInputId,
-		destroy: validator.destroy,
-		getIsInitialized: validator.getIsInitialized,
-		getIsAllValid: validator.getIsAllValid,
-		getFields: validator.getFields
+		destroy: validator.destroy
 	};
 
 }();
