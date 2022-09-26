@@ -491,7 +491,7 @@ Validator.prototype = function () {
 				name: 'email',
 				test: function (field, parameter) {
 					if (!validator.tests[0].test(field)) return true;
-					return /(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\.][a-z]+$)/.test(field.value);
+					return /(^[a-zA-Z0-9\.\_]+[@]{1}[a-z0-9\.\-]+[\.][a-z]+$)/.test(field.value);
 				}
 			},
 			{
