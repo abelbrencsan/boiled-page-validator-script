@@ -408,10 +408,24 @@ Validator.prototype = function () {
 				}
 			},
 			{
+				// Check field value is not empty when the value of element with ID given in the parameter is filled.
+				name: 'required-filled-id',
+				test: function (field, parameter) {
+					return !validator.tests[0].test(document.getElementById(parameter)) || validator.tests[0].test(field);
+				}
+			},
+			{
 				// Check field value is not empty when the value of element with the name given in the parameter is empty.
 				name: 'required-empty',
 				test: function (field, parameter) {
 					return validator.tests[0].test(document.querySelector('[name="' + parameter.replace('*.', '') + '"]')) || validator.tests[0].test(field);
+				}
+			},
+			{
+				// Check field value is not empty when the value of element with ID given in the parameter is empty.
+				name: 'required-empty-id',
+				test: function (field, parameter) {
+					return validator.tests[0].test(document.getElementById(parameter)) || validator.tests[0].test(field);
 				}
 			},
 			{
