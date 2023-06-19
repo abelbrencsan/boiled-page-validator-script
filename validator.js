@@ -393,8 +393,11 @@ Validator.prototype = function () {
 			{
 				// Check field value is not empty.
 				name: 'required',
-				test: function (field, parameter) {
+				test: function (field, parameter, testControlById = false) {
 					if (field.getAttribute('type') === 'radio' || field.getAttribute('type') === 'checkbox') {
+						if (testControlById) {
+							return field.checked;
+						}
 						return document.querySelectorAll('[name="' + field.getAttribute('name') + '"]:checked').length > 0;
 					}
 					return field.value.length > 0;
@@ -411,7 +414,7 @@ Validator.prototype = function () {
 				// Check field value is not empty when the value of element with ID given in the parameter is filled.
 				name: 'required-filled-id',
 				test: function (field, parameter) {
-					return !validator.tests[0].test(document.getElementById(parameter)) || validator.tests[0].test(field);
+					return !validator.tests[0].test(document.getElementById(parameter), null, true) || validator.tests[0].test(field);
 				}
 			},
 			{
@@ -425,7 +428,7 @@ Validator.prototype = function () {
 				// Check field value is not empty when the value of element with ID given in the parameter is empty.
 				name: 'required-empty-id',
 				test: function (field, parameter) {
-					return validator.tests[0].test(document.getElementById(parameter)) || validator.tests[0].test(field);
+					return validator.tests[0].test(document.getElementById(parameter), null, true) || validator.tests[0].test(field);
 				}
 			},
 			{
